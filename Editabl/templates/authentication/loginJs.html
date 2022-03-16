@@ -1,0 +1,22 @@
+<script>
+    $('#login_btn').click(function (){
+        let usr = $('#username').val()
+        let pass = $('#password').val()
+        let csr = $("input[name='csrfmiddlewaretoken']").val()
+        let my_data = {user_nm: usr, password: pass, csrfmiddlewaretoken: csr}
+        $('#userpass_check').css('visibility', 'hidden')
+        $.ajax({
+            url: "{% url 'authentication:authentication_check' %}",
+            method: "POST",
+            data: my_data,
+            success: function (data){
+                if(data['status']===1){
+                    $('form').submit()
+                }
+                else{
+                    $('#userpass_check').css('visibility', 'visible')
+                }
+            }
+        })
+    })
+    </script>

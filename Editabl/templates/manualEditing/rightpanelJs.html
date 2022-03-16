@@ -1,0 +1,16 @@
+<script>
+// Functions adjusting visibility of <div> on right panel
+$(document).ready(() => {
+    $('#adjust').click(() => {
+        document.getElementById('adjust_panel').style.display = "block";
+        document.getElementById('default').style.display = "none";
+        document.getElementById('effect_panel').style.display = "none";
+    });
+
+    $('#effects').click(() => {
+        document.getElementById('adjust_panel').style.display = "none";
+        document.getElementById('default').style.display = "none";
+        document.getElementById('effect_panel').style.display = "block";
+    });
+});
+</script>

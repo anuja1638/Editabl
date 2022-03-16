@@ -1,0 +1,88 @@
+<script>
+    $('label').addClass('form-label');
+    $('p').css({'margin-block-start': 0, 'margin-block-end': 15});
+    let already_taken = $('#already_taken')
+    usr_nm = $('#username')
+    let user_check = true
+    let pass_check = true
+    let csr = $("input[name='csrfmiddlewaretoken']").val()
+    usr_nm.change(function (){
+        let usr_nm_val = usr_nm.val()
+        let my_data = {username: usr_nm_val,
+                       csrfmiddlewaretoken: csr}
+        $.ajax({
+            url: "{% url 'authentication:user_exist_check_url' %}",
+            method: "POST",
+            data: my_data,
+            success: function (data) {
+                let status = data['status']
+                if(status===1){
+                    already_taken.css('visibility','visible')
+                    user_check = false
+                }
+                else {
+                    already_taken.css('visibility', 'hidden')
+                    user_check = true
+                }
+            }
+        })
+    })
+    psw = $('#password')
+    cnf_psw = $('#confirm_password')
+    cnf_psw.change(function (){
+        if(psw.val() !== cnf_psw.val())
+        {
+            $("#password_match").css('visibility', 'visible')
+            pass_check = false
+        }
+        else{
+            $("#password_match").css('visibility', 'hidden')
+            pass_check = true
+        }
+    })
+    $("#signup_submit_btn").click(function (){
+        let mail = $("#email")
+        let addr_in_mail = mail.val().search('@')
+        if(addr_in_mail === -1)
+        {
+            addr_in_mail = false
+        }
+        else{
+            addr_in_mail = true
+        }
+         let f_name = $("#first_name")
+        let l_name = $("#last_name")
+        if(usr_nm.val().length === 0)
+        {
+            alert('Please enter valid Username')
+        }
+        else if(!user_check){
+            alert('Username already taken. Please choose a different Username.')
+        }
+        else if(mail.val().length === 0 || !addr_in_mail)
+        {
+            alert('Please enter valid Email')
+        }
+        else if(f_name.val().length === 0)
+        {
+            alert('Please enter first name')
+        }
+        else if(l_name.val().length === 0)
+        {
+            alert('Please enter last name')
+        }
+        else if(psw.val().length === 0){
+            alert('Please provide a password')
+        }
+        else if(cnf_psw.val().length === 0)
+        {
+            alert('Please confirm your password')
+        }
+        else if(!pass_check){
+            alert('Passwords do not match. Please enter same passwords.')
+        }
+        else{
+            $('form').submit()
+        }
+    })
+</script>

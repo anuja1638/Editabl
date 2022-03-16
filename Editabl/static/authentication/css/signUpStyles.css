@@ -1,0 +1,35 @@
+body{
+    background-color: white;
+}
+#form_div{
+	padding: 3% 3% 1%;
+	box-shadow: 4px 8px  grey;
+	background-color: floralwhite;
+    width: 25rem;
+    margin: 3% auto 3%;
+}
+#already_taken{
+    color: red;
+    font-weight: bolder;
+    visibility: hidden;
+}
+#submit_btn_div{
+    position: relative;
+    margin-bottom: 1.3rem;
+}
+#signup_submit_btn{
+    margin-top: 0.8rem;
+}
+#password_match{
+    color: red;
+    font-weight: bolder;
+    visibility: hidden;
+}
+.high{
+	color: black;
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+	text-decoration: underline;
+	text-align: center;
+    font-weight: bolder;
+}

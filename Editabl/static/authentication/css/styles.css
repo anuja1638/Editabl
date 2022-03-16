@@ -1,0 +1,24 @@
+body{
+	background-color: azure;
+}
+
+.login_form{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4%;
+	width: 25rem;
+	padding: 3%;
+	box-shadow: 4px 8px  grey;
+	background-color: lightsalmon;
+}
+.high{
+	color: green;
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+	text-decoration: underline;
+	text-align: center;
+	font-weight: bolder;
+}
+#userpass_check{
+	visibility: hidden;
+}

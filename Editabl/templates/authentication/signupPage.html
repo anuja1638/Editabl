@@ -1,0 +1,20 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+{% block styleBlock %}
+    <link rel="stylesheet" href="{% static 'authentication/css/signUpStyles.css' %}">
+{% endblock %}
+{% block innerContent %}
+    <div id="form_div" style="background-color: rgb(214, 195, 195);">
+    <h6 class="high">Signup</h6>
+        <form action="" method="POST">{% csrf_token %}
+            <span id="already_taken">*Username already taken*</span>
+            {{ user_form.as_p }}
+        </form>
+        <span id="password_match">*Passwords don't match*</span>
+        <div id="submit_btn_div">
+            <button id="signup_submit_btn" class="btn btn-dark">submit</button>
+        </div>
+            <p style="text-align: center">Already a User? <a href="{% url 'authentication:loginPageUrl' %}" class="anchor-link">Login Here</a></p>
+    </div>
+    {% include 'authentication/signUpJs.html' %}
+{% endblock %}

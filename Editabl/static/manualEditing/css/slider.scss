@@ -1,0 +1,155 @@
+/* Base Colors */
+$shade-10: #2c3e50 !default;
+$shade-1: #d7dcdf !default;
+$shade-0: #fff !default;
+$colour: #F0F !default;
+
+
+.range-slider {
+  margin: 0px 0 0 0%;
+}
+
+/*/ Range Slider */
+$range-width: 100% !default;
+
+$range-handle-color: $shade-10 !default;
+$range-handle-color-hover: rgb(145, 145, 145) !default;
+$range-handle-size: 12px !default;
+
+$range-track-color: $shade-1 !default;
+$range-track-height: 3px !default;
+
+$range-label-color: $shade-10 !default;
+$range-label-width: 80px !default;
+
+.range-slider {
+  width: $range-width;
+}
+
+.range-slider__range {
+  -webkit-appearance: none;
+  width: calc(100% - 16px);
+  height: $range-track-height;
+  border-radius: 5px;
+  background: $range-track-color;
+  background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
+  outline: none;
+  padding: 0;
+  margin: 0;
+
+  // Range Handle
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: $range-handle-size;
+    height: $range-handle-size;
+    border-radius: 50%;
+    background: $range-handle-color;
+    cursor: pointer;
+    transition: background .15s ease-in-out;
+
+    &:hover {
+      background: $range-handle-color-hover;
+    }
+  }
+
+  &:active::-webkit-slider-thumb {
+    background: $range-handle-color-hover;
+  }
+
+  &::-moz-range-thumb {
+    width: $range-handle-size;
+    height: $range-handle-size;
+    border: 0;
+    border-radius: 50%;
+    background: $range-handle-color;
+    cursor: pointer;
+    transition: background .15s ease-in-out;
+
+    &:hover {
+      background: $range-handle-color-hover;
+    }
+  }
+
+  &:active::-moz-range-thumb {
+    background: $range-handle-color-hover;
+  }
+}
+
+
+// Range Label
+.range-slider__value {
+  display: block;
+  position: relative;   
+  width: $range-label-width;
+  color: #212529;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: transparent;
+  padding: 0px 0px 3px 0px ;
+  margin-bottom: 8px;
+
+  &:after {
+    position: absolute;
+    top: 8px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 7px solid $range-label-color;
+    border-bottom: 7px solid transparent;
+    content: '';
+  }
+}
+
+
+// Firefox Overrides
+::-moz-range-track {
+  background: $range-track-color;
+  background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
+  border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer { 
+  border: 0; 
+}
+
+// Slider Backgrounds
+#brightness-slider {
+  background: linear-gradient(to right, black 0%, rgb(243, 243, 243) 100%);
+}
+
+#contrast-slider {
+  background: linear-gradient(to right, rgb(243, 243, 243) 0%, red 100%);
+}
+#saturation-slider {
+  background: linear-gradient(to right, rgb(243, 243, 243) 0%, blue 100%);
+}
+#noise-slider {
+  background: linear-gradient(to right, rgb(243, 243, 243) 0%, rgb(5, 5, 5) 100%);
+}
+#hue-slider {
+  background: linear-gradient(to right, rgb(0, 255, 0) 0%, rgb(0, 0, 255) 33%, rgb(255, 0, 0) 67%, rgb(0, 255, 0) 100%);
+}
+#vibrance-slider {
+  background: linear-gradient(to right, rgb(182, 182, 182) 0%, rgb(16, 255, 28) 100%);
+}
+#exposure-slider {
+  background: linear-gradient(to right, rgb(5, 5, 5) 0%, rgb(240, 240, 240) 100%);
+}
+#sharpen-slider {
+  background: linear-gradient(to right, rgb(243, 243, 243) 0%, rgb(5, 5, 5) 100%);
+}
+#sepia-slider {
+  background: linear-gradient(to right, rgb(243, 243, 243) 0%, rgb(218, 214, 0) 100%);
+}
+#clip-slider {
+  background: linear-gradient(to right, rgb(5, 5, 5) 0%, rgb(240, 240, 240) 100%);
+}
+#stackBlur-slider {
+  background: linear-gradient(to right, rgb(228, 228, 228) 0%, rgb(121, 121, 121) 100%);
+}
+#gamma-slider {
+  background: linear-gradient(to right, rgb(243, 243, 243) 0%, rgb(5, 5, 5) 100%);
+}

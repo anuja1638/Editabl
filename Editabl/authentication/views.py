@@ -10,6 +10,9 @@ from django.contrib.auth.decorators import login_required
 def homePageView(request):
     return render(request, template_name='homepage/homePage.html', context={})
 
+def userProfileView(request):
+    return render(request, template_name='userProfile/userProfile.html', context={})
+
 def signUpPageView(request):
     if request.method == "POST":
         user_form = signup_form(request.POST)
@@ -59,7 +62,6 @@ def authentication_check(request):
     else:
         status = 0
     return JsonResponse({'status': status})
-
 
 @login_required(login_url='/login')
 def logoutView(request):

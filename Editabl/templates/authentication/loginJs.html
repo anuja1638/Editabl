@@ -6,7 +6,7 @@
         let my_data = {user_nm: usr, password: pass, csrfmiddlewaretoken: csr}
         $('#userpass_check').css('visibility', 'hidden')
         $.ajax({
-            url: "{% url 'authentication:authentication_check' %}",
+            url: "{% url 'authentication:authenticationCheck' %}",
             method: "POST",
             data: my_data,
             success: function (data){

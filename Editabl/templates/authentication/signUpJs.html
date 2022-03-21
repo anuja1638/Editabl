@@ -11,7 +11,7 @@
         let my_data = {username: usr_nm_val,
                        csrfmiddlewaretoken: csr}
         $.ajax({
-            url: "{% url 'authentication:user_exist_check_url' %}",
+            url: "{% url 'authentication:userExistCheckUrl' %}",
             method: "POST",
             data: my_data,
             success: function (data) {

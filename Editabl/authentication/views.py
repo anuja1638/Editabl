@@ -24,8 +24,11 @@ def signUpPageView(request):
         user_form = signup_form()
     return render(request, 'authentication/signUpPage.html', context={'user_form': user_form})
 
+@login_required(login_url = '/login')
+def manualEditingPageView(request):
+    return render(request, template_name='manualEditing/manualEditingPage.html', context={})
 
-def user_exist_check(request):
+def userExistCheckUrl(request):
     username = request.POST['username']
     username = username.strip()
     try:
@@ -49,7 +52,7 @@ def loginPageView(request):
     return render(request, 'authentication/loginPage.html', context={})
 
 
-def authentication_check(request):
+def authenticationCheck(request):
     username = request.POST['user_nm']
     password = request.POST['password']
     user = authenticate(username=username, password=password)

@@ -9,9 +9,9 @@ Homepage
 {% block innerContent%}
 <div class="row d-flex justify-content-center text-center" style="margin-top: 4%;">
   <div class="col-6">
-      <img src="{% static 'homepage/images/ed.png' %}" height="370px" width="570px"></img>
+      <img src="{% static 'manualEditing/images/Editabl-Logo.png' %}" height="370px" width="570px"></img>
       <p style="font-family: 'Redressed', cursive; font-size: 30;">Simply recreate the captured beauty.</p>
-      <button type="button" class="btn btn-outline-primary" style="margin-top: 2%;">Get Started</button>
+      <a href="{% url "authentication:signUpPageUrl"%}" class="btn btn-outline-primary" style="margin-top: 2%;">Get Started</a>
   </div>
 
   <header class="header show-on-scroll">

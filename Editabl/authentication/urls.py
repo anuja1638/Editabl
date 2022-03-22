@@ -10,6 +10,7 @@ urlpatterns = [
     path('login/', views.loginPageView, name='loginPageUrl'),
     path('signup/', views.signUpPageView, name='signUpPageUrl'),
     path('logout/', views.logoutView, name='logoutUrl'),
-    path('user_exist_check/', views.user_exist_check, name='user_exist_check_url'),
-    path('authentication_check/', views.authentication_check, name='authentication_check'),
+    path('userExistCheckUrl/', views.userExistCheckUrl, name='userExistCheckUrl'),
+    path('authenticationCheck/', views.authenticationCheck, name='authenticationCheck'),
+     path('editor/', views.manualEditingPageView, name='manualEditingPageUrl'),
 ]

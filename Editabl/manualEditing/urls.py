@@ -6,5 +6,5 @@ from . import views
 app_name = 'manualEditing'
 
 urlpatterns = [
-    path('editor/', views.manualEditingPageView, name='manualEditingPageUrl'),
+   
     ]

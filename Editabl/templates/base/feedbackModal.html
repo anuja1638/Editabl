@@ -1,0 +1,72 @@
+<!-- Feedback Modal -->
+<div class="modal fade" id="feedback-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="feedback-modal" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="feedback-modal-title">Feedback</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="text-muted mb-2">Let us know what you think!</div>
+                    <form class="my-3" action="">
+
+                        <div class="row my-1">
+                            <div class="col-6">Are you satisfied with the overall experience?</div>
+                            <div class="col-6 d-flex justify-content-evenly">
+                                <span><input type="radio" name="satisfied" id="satisfied-yes"><label
+                                        for="satisfied-yes">&nbsp
+                                        Yes</label></span>
+                                <span><input type="radio" name="satisfied" id="satisfied-somewhat"><label
+                                        for="satisfied-somewhat">&nbsp
+                                        Somewhat</label></span>
+                                <span><input type="radio" name="satisfied" id="satisfied-no"><label
+                                        for="satisfied-no">&nbsp
+                                        No</label></span>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-6">Did you find navigating through the website easy?</div>
+                            <div class="col-6 d-flex justify-content-evenly">
+                                <span><input type="radio" name="navigation" id="navigation-yes"><label
+                                        for="navigation-yes">&nbsp
+                                        Yes</label></span>
+                                <span><input type="radio" name="navigation" id="navigation-somewhat"><label
+                                        for="navigation-somewhat">&nbsp Somewhat</label></span>
+                                <span><input type="radio" name="navigation" id="navigation-no"><label
+                                        for="navigation-no">&nbsp
+                                        No</label></span>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-6">Are you satisfied with the overall experience?</div>
+                            <div class="col-6 d-flex justify-content-evenly">
+                                <span><input type="radio" name="intuitive" id="intuitive-yes"><label
+                                        for="intuitive-yes">&nbsp
+                                        Yes</label></span>
+                                <span><input type="radio" name="intuitive" id="intuitive-somewhat"><label
+                                        for="intuitive-somewhat">&nbsp
+                                        Somewhat</label></span>
+                                <span><input type="radio" name="intuitive" id="intuitive-no"><label
+                                        for="intuitive-no">&nbsp
+                                        No</label></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-floating my-3">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Your Feedback</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer pb-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

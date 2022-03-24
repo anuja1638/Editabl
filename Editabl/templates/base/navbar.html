@@ -2,7 +2,7 @@
 {% block content %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'authentication:homePageUrl'%}" style="color: rgb(55, 179, 228) ;">Editabl</a>
+          <a class="navbar-brand" href="#">Editabl</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,6 +26,9 @@
                     <a class="nav-link" href="{% url 'authentication:signUpPageUrl' %}">Signup</a>
                   </li>
                 {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'records:aboutUsUrl'%}">About Us</a>
+                </li>
             </ul>
           </div>
         </div>

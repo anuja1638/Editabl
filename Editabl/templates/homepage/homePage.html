@@ -7,100 +7,110 @@ Homepage
 <link rel='stylesheet' href="{%static 'homepage/css/styles.css'%}">
 {%endblock%}
 {% block innerContent%}
-<div class="row d-flex justify-content-center text-center" style="margin-top: 4%;">
-  <div class="col-6">
-      <img src="{% static 'manualEditing/images/Editabl-Logo.png' %}" height="370px" width="570px"></img>
-      <p style="font-family: 'Redressed', cursive; font-size: 30;">Simply recreate the captured beauty.</p>
-      <a href="{% url "authentication:signUpPageUrl"%}" class="btn btn-outline-primary" style="margin-top: 2%;">Get Started</a>
+<div class="text-center mt-4">
+  <div class="container">
+      <div class="d-flex justify-content-center">
+        <img class="banner" src="{% static 'manualEditing/images/Editabl-Logo.png' %}"></img>
+      </div>
+      <div class="h1 text-center">The One-Stop Shop</div>
+      <div class="fs-6 fw-light text-center pb-3">FOR ALL YOUR EDITING NEEDS</div>
+      <a href="{% url 'authentication:signUpPageUrl'%}" class="btn btn-outline-primary mb-4 mt-2">Get Started</a>
   </div>
 
-  <header class="header show-on-scroll">
-      <div class="row" style="margin-top: 4%;">
-          <p style="font-family: 'El Messiri', sans-serif;
+  <div class="bg-light show-on-scroll arrow-container">
+    <img class="arrow" src="{% static 'homepage/images/arrow2.png' %}" alt="">
+    <div class="row mt-4">
+      <p style="font-family: 'El Messiri', sans-serif;
   font-family: 'Redressed', cursive; font-size: 50px;">Upgrade your look.</p>
+    </div>
+    <div class="row mt-2">
+      <div class="col-6">
+        <img src="{% static 'homepage/images/ed1.jpg' %}" height="90%" width="40%"
+          class="inline-photo show-on-scroll"></img>
       </div>
-      <div class="row" style="margin-top: 2%;">
-          <div class="col-6">
-              <img src="{% static 'homepage/images/ed1.jpg' %}" height="90%" width="40%" class="inline-photo show-on-scroll"></img>
-          </div>
-          <div class="col-6">
-              <img src="{% static 'homepage/images/ed2.jpg' %}" height="90%" width="40%" class="inline-photo show-on-scroll"></img>
-          </div>
+      <div class="col-6">
+        <img src="{% static 'homepage/images/ed2.jpg' %}" height="90%" width="40%"
+          class="inline-photo show-on-scroll"></img>
       </div>
-  </header>
+    </div>
+  </div>
 
-  <div>
-      <p>How to edit photo.</p>
-
-      <div class="pricing-box">
-
-        <div class="row" style="margin-left: 2rem; margin-right: 2rem;">
-          <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card">
-              <div class="card-header">
-            <img src="{% static 'homepage/images/upload.PNG' %}"></img>
-              </div>
-              <div class="card-body">
-                <h4>1. Upload Image/ Paste URL.</h4>
-                <p>Upload an image from your local device or paste url and load image for editing.</p>                       
-              </div>
-              </div>
-            </div>
-        
+  <div class="">
+    <div class="fs-4 fst-italic py-3">How to edit a photo.</div>
+    <div class="">
+      <div class="row mb-4 mx-3">
         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class=" card">
-              <div class="card-header">
-        
-                <img src="{% static 'homepage/images/feature.PNG' %}"></img>
-        
-              </div>
-              <div class="card-body">
-                <h4>2. Select a feature.</h4>
-                <p>Crop or resize your image by selecting a feature. You can adjust brightness, contrastness, etc.</p>
-                
+          <div class="card h-100">
+            <div class="card-header">
+              <div class="d-flex justify-content-center">
+                <img src="{% static 'homepage/images/upload.PNG' %}"></img>
               </div>
             </div>
+            <div class="card-body">
+              <h4>1. Upload Image/ Paste URL.</h4>
+              <p>Upload an image from your local device or paste url and load image for editing.</p>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card">
-              <div class="card-header">
+          <div class="card h-100">
+            <div class="card-header">
+              <div class="d-flex justify-content-center">
+
+                <img src="{% static 'homepage/images/feature.PNG' %}"></img>
+              </div>
+
+            </div>
+            <div class="card-body">
+              <h4>2. Select a feature.</h4>
+              <p>Crop or resize your image by selecting a feature. You can adjust brightness, contrastness, etc.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-header">
+              <div class="d-flex justify-content-center">
                 <img src="{% static 'homepage/images/preview.PNG' %}"></img>
               </div>
-              <div class="card-body">
-                <h4>3. Adjust and preview.</h4>
-                <p>Upload an image from your local device or paste url and load image for editing.</p>    
-              </div>
             </div>
+            <div class="card-body">
+              <h4>3. Adjust and preview.</h4>
+              <p>Upload an image from your local device or paste url and load image for editing.</p>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <div class="card">
+          <div class="card h-100">
             <div class="card-header">
-              <img src="{% static 'homepage/images/download.PNG' %}"></img>
+              <div class="d-flex justify-content-center">
+                <img src="{% static 'homepage/images/download.PNG' %}"></img>
+              </div>
             </div>
             <div class="card-body">
               <h4>4. Download/ Share.</h4>
-                <p>Upload an image from your local device or paste url and load image for editing.</p>    
+              <p>Share your creations with your colleagues and friends on your favorite social media platforms!</p>
             </div>
           </div>
-      </div>
-      
-
         </div>
-        </div>
-        
-
       </div>
+    </div>
+  </div>
+  <footer id="footer" class="bg-dark text-light d-flex justify-content-center align-items-center py-3">
+    <span>© Copyright 2022 Editabl</span>
+    <a id="btn-back-to-top" class="btn text-light px-3" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+        <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+      </svg> </a>
+  </footer>
 </div>
-<footer id="footer">
-  <p>© Copyright 2022 Editabl</p>
-</footer>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-  crossorigin="anonymous"></script>
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-  crossorigin="anonymous"></script>
-  {% include 'homepage/scrolling_js.html' %}
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+{% include 'homepage/scrolling_js.html' %}
 {%endblock%}

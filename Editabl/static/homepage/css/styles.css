@@ -1,11 +1,7 @@
-footer
-{
-  padding-top: 5%;
-  margin-top: 3%;
-  background-color:black;
-  text-align: center;
-  color:#fff;
+.banner {
+  width: 55vw;
 }
+
 .inline-photo {
   border: 1em solid #fff;
   border-bottom: 2em solid #fff;
@@ -25,7 +21,65 @@ footer
   opacity: 1;
   transform: rotateZ(-2deg);
 }
-#card_style
-{
-  margin: 25px 25px 25px 25px;;
+
+.arrow-container {
+  position: relative;
+  overflow-x: hidden;
 }
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  left: 39.75%;
+  width: 23.0%;
+  transform: rotateZ(30deg);
+  z-index: 1;
+}
+
+.card-header {
+  background: #e7f6fe!important;
+}
+
+#footer {
+  position: relative;
+}
+
+#btn-back-to-top {
+  position: absolute;
+  right: 30px;
+  color: #f1f1f1;
+}
+
+#btn-back-to-top:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Below Medium */
+@media (max-width: 768px) {
+  .arrow {
+    top: 60%;
+    left: 44.5%;
+    width: 12%;
+  }
+}
+
+/* Medium to Large*/
+@media (min-width: 768px) and (max-width: 992px) {
+  .arrow {
+    top: 60%;
+    left: 46%;
+    width: 10%;
+  }
+}
+
+/* Large to X-Large*/
+@media (min-width: 992px) and (max-width: 1350px) {
+  .arrow {
+    top: 53%;
+    left: 42.5%;
+    width: 18%;
+  }
+}
+
+

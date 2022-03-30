@@ -1,0 +1,104 @@
+{%extends 'base/navbar.html'%}
+{% load static %}
+{%block titleContent%}
+Homepage
+{%endblock%}
+{%block styleBlock%}
+<link rel='stylesheet' href="{%static 'feed/css/styles.css'%}">
+{%endblock%}
+{% block innerContent%}
+<div>
+    <div class="row">
+        <!-- Post Container -->
+        <div class="posts-container col-md-9">
+            <div class="col-9 bg-lighter mx-auto">
+                <div class="d-flex flex-column align-items-center pt-3">
+                    <!-- Start of Posts -->
+                    <div class="card border border-dark">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <img class="post-pfp" src="{% static 'userProfile\images\profilePic.png' %}" alt="Pfp">
+                                <div class="strong ms-2">Username</div>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <img class="post-img" src="{% static 'feed\images\girl-post-1.jpg' %}" alt="post-img">
+                        </div>
+                        <div class="card-footer">
+                            <div class="fs-5 d-flex">
+                                <i class="bi bi-heart"></i>
+                                <i class="bi bi-chat ms-3"></i>
+                                <i class="bi bi-bookmark ms-auto"></i>
+                            </div>
+                            <div class="post-caption"> <span class="fw-bold">username</span> some fancy caption</div>
+                        </div>
+                    </div>
+                    <div class="card border border-dark">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <img class="post-pfp" src="{% static 'userProfile\images\profilePic.png' %}" alt="Pfp">
+                                <div class="strong ms-2">Username</div>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <img class="post-img" src="{% static 'feed\images\girl-post-1.jpg' %}" alt="post-img">
+                        </div>
+                        <div class="card-footer">
+                            <div class="fs-5 d-flex">
+                                <i class="bi bi-heart"></i>
+                                <i class="bi bi-chat ms-3"></i>
+                                <i class="bi bi-bookmark ms-auto"></i>
+                            </div>
+                            <div class="post-caption"> <span class="fw-bold">username</span> some fancy caption</div>
+                        </div>
+                    </div>
+                    <div class="card border border-dark">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <img class="post-pfp" src="{% static 'userProfile\images\profilePic.png' %}" alt="Pfp">
+                                <div class="strong ms-2">Username</div>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <img class="post-img" src="{% static 'feed\images\girl-post-1.jpg' %}" alt="post-img">
+                        </div>
+                        <div class="card-footer">
+                            <div class="fs-5 d-flex">
+                                <i class="bi bi-heart"></i>
+                                <i class="bi bi-chat ms-3"></i>
+                                <i class="bi bi-bookmark ms-auto"></i>
+                            </div>
+                            <div class="post-caption"> <span class="fw-bold">username</span> some fancy caption</div>
+                        </div>
+                    </div>
+                    <!-- End of Posts -->
+                </div>
+            </div>
+
+        </div>
+        <!-- Side Container -->
+        <div class="side-container col-md-3 d-none d-md-block">
+            <div class="d-flex align-items-center">
+                <img class="post-pfp" src="{% static 'userProfile\images\profilePic.png' %}" alt="Pfp">
+                <div class="ms-2">
+                    <span class="fw-bold side-name">Name</span>
+                    <div class="text-muted side-username">username</div>
+                </div>
+            </div>
+
+            <div class="mt-3 d-grid mx-auto">
+                <button class="btn btn-outline-primary">+ New Post</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mobile Add Button -->
+    <div class="d-md-none btn-add-mobile d-flex justify-content-center align-items-center">
+        <a href="#">
+            <i class="bi bi-plus"></i>
+        </a>
+    </div>
+
+</div>
+{%endblock%}

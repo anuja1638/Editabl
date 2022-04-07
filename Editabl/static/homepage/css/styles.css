@@ -24,7 +24,8 @@
 
 .arrow-container {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+
 }
 
 .arrow {

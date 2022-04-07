@@ -1,0 +1,83 @@
+nav {
+    position: sticky;
+    top: 0;
+}
+
+#nav-center-buttons button:focus:not(:focus-visible){
+    color:#074EE8;
+    outline-width: 0px;
+    box-shadow: none;
+}
+
+.navbar-brand img {
+    width: 68px;
+    height: 21px;
+}
+
+.banner{
+    background-image: url('/banner.png');
+    height: 400px;
+    background-position: center 90%;
+    background-size: cover;
+}
+
+
+.grad-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+#info {
+    padding-top: 50px;
+    padding-bottom: 75px;
+}
+    
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#map iframe{
+   width: 100%;
+   height: 100%;
+}
+
+#devs {
+    padding-top: 50px;
+    padding-bottom: 75px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-title {
+    white-space: nowrap;
+}
+
+.card-image {
+    width: min(100%, 135px);
+    height: min(100%, 135px);
+    border-radius: 75px;
+}
+
+/* Medium and up */
+@media (min-width: 768px) {}
+
+
+/* Below Medium */
+@media (max-width: 768px) {
+    .card-image {
+        width: min(100%, 100px);
+        height: min(100%, 100px);
+        border-radius: 50px;
+    }
+}

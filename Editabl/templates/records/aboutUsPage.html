@@ -1,0 +1,159 @@
+{%extends 'base/navbar.html'%}
+{% load static %}
+{% block titleBlock %}
+        About Us
+{% endblock %}
+
+{% block styleBlock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'records/css/styles.css' %}">
+{% endblock %}
+
+{% block innerContent %}
+    <div class="banner"><img src="{% static 'records/images/banner1.png'%}" height="100%" width="100%"></div>
+    <div class="grad-bg">
+        <div id="info" class="container">
+            <div class="h1 text-center pt-4">The One-Stop Shop</div>
+            <div class="fs-6 fw-light text-center pb-4">FOR ALL YOUR EDITING NEEDS</div>
+            <p class="text-center px-5">
+                Editabl is all about simplifying image editing for you and pushing the boundaries of what is possible
+                with high-quality images, while removing the barriers of technical expertise.
+            </p>
+            <p class="text-center px-5">
+                Dive in and make your portraits stand out with cutting-edge artificial intelligence with just a press of
+                a button!
+            </p>
+            <p class="text-center px-5">
+                We are determined to create a revolutionary way to help you <br> <strong>stand out</strong>. </p>
+        </div>
+    </div>
+    <div class="bg-light">
+        <div class="container bg-light bg-gradient pb-3">
+            <div class="h1 text-center py-4">Contact Us</div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 order-md-last mb-3">
+                    <form action="">
+                        <div class="form-floating mb-3">
+                            <input type="name" class="form-control" id="name-input" placeholder="Name">
+                            <label for="name-input">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            <label for="email-input">Email Address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="phone" class="form-control" id="phone-input" placeholder="Phone">
+                            <label for="phone-input">Phone</label>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave your message here" id="message-text"
+                                style="height: 100px"></textarea>
+                            <label for="message-text">Message</label>
+                        </div>
+                        <button class="btn btn-primary mt-3">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-6 px-auto pb-3">
+                    <div id="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6183.3222385448535!2d73.83555402248048!3d18.467435406508024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf8d94414f8f%3A0xc6091a80e79be235!2sSinhgad%20College%20of%20Engineering%2C%20Pune!5e0!3m2!1sen!2sin!4v1647335660812!5m2!1sen!2sin"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="pt-2 text-center">S. No. 44/1, Off, Sinhgad Rd, Vadgaon Budruk, Pune, Maharashtra 411041
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="grad-bg">
+        <div id="devs" class="container">
+            <h3 class="text-center pb-4">Made with ❤️ by:</h3>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card pt-3 h-100">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'records/images/AnujaAher.jpg' %}" class="card-image" alt="...">
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <h5 class="card-title pt-3 pb-2">Anuja Aher</h5>
+                            <div class="d-flex justify-content-evenly px-4">
+                                <a href="mailto:anuja7385@gmail.com" class="link-dark" target="_blank"> <i class="bi bi-envelope"></i> </a>
+                                <a href="https://www.instagram.com/_.anujaaher._/" class="link-dark" target="_blank"> <i class="bi bi-instagram"></i> </a>
+                                <a href="https://www.linkedin.com/in/anuja-aher-b490731a8/" class="link-dark" target="_blank"> <i class="bi bi-linkedin"></i> </a>
+                                <a href="https://github.com/anuja1638" class="link-dark" target="_blank"> <i class="bi bi-github"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pt-3 h-100">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'records/images/KaustubhChaudhari.jpeg' %}" class="card-image" alt="...">
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <h5 class="card-title pt-3 pb-2">Kaustubh Chaudhari</h5>
+                            <div class="d-flex justify-content-evenly px-4">
+                                <a href="mailto:kaustubhchaudhari121@gmail.com" class="link-dark" target="_blank"> <i class="bi bi-envelope"></i> </a>
+                                <a href="https://www.instagram.com/kaustubh_404/" class="link-dark" target="_blank"> <i class="bi bi-instagram"></i> </a>
+                                <a href="https://www.linkedin.com/in/chaudhari-kaustubh/" class="link-dark" target="_blank"> <i class="bi bi-linkedin"></i> </a>
+                                <a href="https://github.com/KaustubhChaudhari121" class="link-dark" target="_blank"> <i class="bi bi-github"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pt-3 h-100">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'records/images/KaustubhJangde.jpg' %}" class="card-image" alt="...">
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <h5 class="card-title pt-3 pb-2">Kaustubh Jangde</h5>
+                            <div class="d-flex justify-content-evenly px-4">
+                                <a href="mailto:jangdekaustubh@gmail.com" class="link-dark" target="_blank"> <i class="bi bi-envelope"></i> </a>
+                                <a href="https://www.instagram.com/kaustubh_jangde/" class="link-dark" target="_blank"> <i class="bi bi-instagram"></i> </a>
+                                <a href="https://www.linkedin.com/in/kaustubh-jangde-0b5981171" class="link-dark" target="_blank"> <i class="bi bi-linkedin"></i> </a>
+                                <a href="https://github.com/kaustubh-jangde" class="link-dark" target="_blank"> <i class="bi bi-github"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card pt-3  h-100">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'records/images/VishwajeetOhal.jpg' %}" class="card-image" alt="...">
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <h5 class="card-title pt-3 pb-2">Vishwajeet Ohal</h5>
+                            <div class="d-flex justify-content-evenly px-4">
+                                <a href="mailto:vtohal@gmail.com" class="link-dark" target="_blank"> <i class="bi bi-envelope"></i> </a>
+                                <a href="https://www.instagram.com/vishwa_702/" class="link-dark" target="_blank"> <i class="bi bi-instagram"></i> </a>
+                                <a href="https://www.linkedin.com/in/vishwajeet-ohal/" class="link-dark" target="_blank"> <i class="bi bi-linkedin"></i> </a>
+                                <a href="https://github.com/vishwa702" class="link-dark" target="_blank"> <i class="bi bi-github"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-light text-center pt-2 pb-3">
+        Copyright Ⓒ 2022 All Rights Reserved
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+{% endblock %}

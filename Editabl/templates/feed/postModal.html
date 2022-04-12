@@ -1,0 +1,50 @@
+{% load static %}
+<!-- Post Modal -->
+<div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="post-modallabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row my-2 py-2 h-100">
+            <div id="col-1"
+              class="col-12 col-md d-flex flex-column justify-content-center align-items-center text-center ms-md-3 border-end">
+                <div class="align-self-start d-flex align-items-center">
+                  <img class="post-pfp" src="{% static 'userProfile\images\profilePic.png' %}" alt="Pfp">
+                  <div class="ms-2">
+                      <span class="fw-bold side-name">Name</span>
+                      <div class="text-muted side-username">username</div>
+                  </div>
+              </div>
+              <div class="img-container my-auto">
+                <img class="img-fluid" src="/banner.png" alt="Image">
+              </div>
+            </div>
+            <div id="col-2" class="col-12 col-md d-flex flex-column justify-content-centers pe-0">
+              <div>
+                <span class="username fw-bold">username</span>: caption
+                <div class="comment-age">3h</div>
+              </div>
+              <hr>
+              <div class="comments flex-grow-1">
+                <div>
+                  <span class="username fw-bold">user1</span>: comment1
+                  <div class="comment-age">2h</div>
+                </div>
+                <div>
+                  <span class="username fw-bold">user2</span>: comment2
+                  <div class="comment-age">1h</div>
+                </div>
+              </div>
+              <hr>
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="comment-textarea"></textarea>
+                <label for="comment-textarea">Add a comment</label>
+                <button class="btn btn-primary btn-post-comment">Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

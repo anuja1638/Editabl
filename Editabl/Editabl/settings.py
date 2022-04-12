@@ -41,7 +41,8 @@ INSTALLED_APPS = [
 
     'authentication',
     'manualEditing',
-    'userProfile'
+    'userProfile',
+    'records'
 ]
 
 MIDDLEWARE = [

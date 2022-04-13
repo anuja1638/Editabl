@@ -37,6 +37,5 @@ def aboutUsView(request):
                             ccAddr = CC_LIST,
                             subject = f"{name} wants to contact for Editabl!", 
                             message=MAIL_MESSAGE.format(name, email, phone, message))
-            print(MAIL_MESSAGE)
         return HttpResponseRedirect('/')
     return render(request, template_name='records/aboutUsPage.html', context={})

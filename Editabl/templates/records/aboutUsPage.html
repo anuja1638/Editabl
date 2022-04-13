@@ -34,22 +34,22 @@
             <div class="h1 text-center py-4">Contact Us</div>
             <div class="row justify-content-center">
                 <div class="col-md-6 order-md-last mb-3">
-                    <form action="">
+                    <form method="POST">{% csrf_token %}
                         <div class="form-floating mb-3">
-                            <input type="name" class="form-control" id="name-input" placeholder="Name">
+                            <input type="name" class="form-control" id="name-input" placeholder="Name" name="name">
                             <label for="name-input">Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            <input type="email" class="form-control" id="email-input" placeholder="Email" name="email">
                             <label for="email-input">Email Address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="phone" class="form-control" id="phone-input" placeholder="Phone">
+                            <input type="phone" class="form-control" id="phone-input" placeholder="Phone" name="phone">
                             <label for="phone-input">Phone</label>
                         </div>
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave your message here" id="message-text"
-                                style="height: 100px"></textarea>
+                                style="height: 100px" name="message"></textarea>
                             <label for="message-text">Message</label>
                         </div>
                         <button class="btn btn-primary mt-3">Submit</button>

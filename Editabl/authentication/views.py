@@ -10,8 +10,6 @@ from django.contrib.auth.decorators import login_required
 def homePageView(request):
     return render(request, template_name='homepage/homePage.html', context={})
 
-def feedView(request):
-    return render(request, template_name='feed/feed.html', context={})
 
 def signUpPageView(request):
     if request.method == "POST":

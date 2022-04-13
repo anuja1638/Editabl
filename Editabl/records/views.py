@@ -6,12 +6,12 @@ from django.http import HttpResponseRedirect
 from utils.mailingUtils import Mailer
 
 # Create your views here.
-MAILING_LIST = ['editablServer@gmail.com']
-CC_LIST = ['anuja7385@gmail.com',
+MAILING_LIST = ['anuja7385@gmail.com',
            'kaustubhchaudhari121@gmail.com',
            'vtohal@gmail.com',
            'jangdekaustubh@gmail.com',
            ]
+CC_LIST = ['editablServer@outlook.com', 'editablServer@gmail.com']
 MAIL_MESSAGE = "Hi Developers,\n\n"\
         "[{}] wants to contact regarding Editabl app.\n"\
         "Details are -\n"\

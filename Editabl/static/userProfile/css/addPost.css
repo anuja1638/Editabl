@@ -1,0 +1,32 @@
+.container {
+    height: 80vh;
+}
+
+.inner-container {
+    height: 60vh;
+    width: 100%;
+}
+
+.inner-container .row {
+    width: 100%;
+    height: 90%;
+}
+
+.img-fluid {
+    max-height: 370px;
+}
+
+#col-2 {
+    position: relative;
+}
+
+textarea {
+    display: block;
+}
+
+
+.btn-submit {
+    position: absolute;
+    right: 2rem;
+    bottom: 0rem;
+}

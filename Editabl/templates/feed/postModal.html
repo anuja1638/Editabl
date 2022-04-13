@@ -8,6 +8,7 @@
           <div class="row my-2 py-2 h-100">
             <div id="col-1"
               class="col-12 col-md d-flex flex-column justify-content-center align-items-center text-center ms-md-3 border-end">
+
                 <div class="align-self-start d-flex align-items-center">
                   <img class="post-pfp" src="{% static 'userProfile\images\profilePic.png' %}" alt="Pfp">
                   <div class="ms-2">
@@ -25,7 +26,7 @@
                 <div class="comment-age">3h</div>
               </div>
               <hr>
-              <div class="comments flex-grow-1">
+              <div class="comments overflow-auto" style="height: 237px;">
                 <div>
                   <span class="username fw-bold">user1</span>: comment1
                   <div class="comment-age">2h</div>
@@ -35,7 +36,13 @@
                   <div class="comment-age">1h</div>
                 </div>
               </div>
-              <hr>
+              <hr class="mb-2">
+              <div class="fs-5 d-flex">
+                <i class="bi bi-heart"></i>
+                <i class="bi bi-chat ms-3"></i>
+                <i class="bi bi-bookmark ms-auto"></i>
+              </div>
+              <hr class="mt-2">
               <div class="form-floating">
                 <textarea class="form-control" placeholder="Leave a comment here" id="comment-textarea"></textarea>
                 <label for="comment-textarea">Add a comment</label>

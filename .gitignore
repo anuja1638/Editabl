@@ -1,0 +1,12 @@
+Editabl/Editabl/__pycache__/
+Editabl/authentication/__pycache__/
+Editabl/authentication/migrations/__pycache__/
+Editabl/db.sqlite3
+Editabl/manualEditing/__pycache__/
+Editabl/manualEditing/migrations/__pycache__/
+Editabl/records/__pycache__/
+Editabl/records/migrations/__pycache__/0001_initial.cpython-38.pyc
+Editabl/userProfile/__pycache__/
+Editabl/userProfile/migrations/__pycache__/
+Editabl/utils/__pycache__/
+

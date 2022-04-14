@@ -1,8 +1,8 @@
 import smtplib
 
-MAIL_ID = "editablServer@gmail.com"
+MAIL_ID = "editablServer@outlook.com"
 PASSWORD = "editabl@BE02"
-HOST = 'smtp.gmail.com'
+HOST = 'smtp.outlook.com'
 PORT = 587
 
 

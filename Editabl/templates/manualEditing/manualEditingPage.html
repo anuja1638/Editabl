@@ -37,13 +37,12 @@
             <div>
                 <form class="container-fluid justify-content-start m-0 p-0">
                     <button class="btn btn-sm btn-outline-success me-2" type="button" data-bs-toggle="modal"
-                        data-bs-target="#saveModal">Save<i class="bi bi-download p-2 pt-0"></i></button>
+                        data-bs-target="#saveModal" id='saveBtn'>Save<i class="bi bi-download p-2 pt-0"></i></button>
                     <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="modal"
                         data-bs-target="#shareModal">Share<i class="bi bi-share  p-2 pt-0"></i></button>
 
                 </form>
             </div>
-
         </div>
     </nav>
 
@@ -317,6 +316,9 @@
             </div>
         </div>
     </div>
+    <form method="POST" id='feedPostForm' style='visibility: hidden'>{% csrf_token %}
+        <input type='name' name='dataURL'>
+    </form>
 
     <!-- Modals -->
 
@@ -332,13 +334,13 @@
                 <div class="modal-body px-4 ps-md-0 m-md-2">
                     <div class="row">
                         <div
-                            class="col-12 col-md bg-secondary ps-md-0 ms-md-4 me-md-2 align-items-center justify-content-center d-flex image-preview">
-                            Picture Preview
+                            class="col-12 col-md bg-secondary ps-md-0 ms-md-4 me-md-2 align-items-center justify-content-center d-flex image-preview" id='canvasPreview'>
+
                         </div>
                         <div class="col align-items-center justify-content-center d-grid ">
                             <button class="btn btn-lg btn-primary px-4">Download</button>
                             <!-- <p class="fs-5 my-5">-- OR --</p> -->
-                            <button class="btn btn-lg btn-primary">Save to Feed</button>
+                            <button class="btn btn-lg btn-primary" id='feedPostButton'>Save to Feed</button>
                             <button class="btn btn-lg btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#shareModal">Share</button>
                         </div>
@@ -389,9 +391,6 @@
                                 data-bs-target="#saveModal"><i class="bi bi-download icon-size"></i></button>
                                 <label>Download</label>
                             </div>
-                            
-                            
-
                         </div>
                     </div>
                 </div>
@@ -415,9 +414,6 @@
         crossorigin="anonymous"></script>
         {% include 'manualEditing/editingJs.html' %}
         {% include 'manualEditing/rightpanelJs.html' %}
-
-    <script src="editing.js"></script>
-    <script src="rightpanel.js"></script>
+        {% include 'manualEditing/loadPreviewAndSaveToFeedJS.html'%}
 </body>
-
 </html>

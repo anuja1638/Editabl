@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'userProfile',
     'records',
     'feed',
+    'postManagement'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     STATIC_DIR
 ]
+
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'

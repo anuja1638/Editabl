@@ -25,9 +25,6 @@ def signUpPageView(request):
         user_form = signup_form()
     return render(request, 'authentication/signUpPage.html', context={'user_form': user_form})
 
-@login_required(login_url = '/login')
-def manualEditingPageView(request):
-    return render(request, template_name='manualEditing/manualEditingPage.html', context={})
 
 def userExistCheckUrl(request):
     username = request.POST['username']

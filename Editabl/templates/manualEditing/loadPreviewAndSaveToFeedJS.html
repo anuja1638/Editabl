@@ -1,0 +1,27 @@
+<script>
+    let saveBtn = $("#saveBtn")
+    let canvasPreview = document.getElementById('canvasPreview')
+    let canvas = document.getElementById('canvas')
+    let onClickSaveBtn = () => {
+        let dataURIString = canvas.toDataURL()
+        canvasPreview.innerHTML = "<img src='" + dataURIString + "' width='100%' height='100%'>"
+    }
+    saveBtn.click(onClickSaveBtn)
+
+    let feedPostButton = $('#feedPostButton')
+    let submitPost = () => {
+        let csr = $("input[name='csrfmiddlewaretoken']").val()
+        let dataURIString = canvas.toDataURL()
+        data = {dataURIString: dataURIString, csrfmiddlewaretoken: csr}
+            $.ajax({
+            url: "{% url 'postManagement:uploadPostUrl' %}",
+            type: "POST",
+            data: data,
+            success: function(response){
+                if(response.status === 1){
+                window.location.href = '/postManagement/addPost/' + response.idURI
+            }}
+        })
+        }
+        feedPostButton.click(submitPost)
+</script>

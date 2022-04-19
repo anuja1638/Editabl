@@ -12,6 +12,4 @@ urlpatterns = [
     path('logout/', views.logoutView, name='logoutUrl'),
     path('userExistCheckUrl/', views.userExistCheckUrl, name='userExistCheckUrl'),
     path('authenticationCheck/', views.authenticationCheck, name='authenticationCheck'),
-    path('editor/', views.manualEditingPageView, name='manualEditingPageUrl'),
-    
 ]

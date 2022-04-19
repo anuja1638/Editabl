@@ -1,0 +1,19 @@
+<script>
+let captionInput = $("#caption")
+let postSubmitBtn = $('#postSubmitBtn')
+let submitPost = () => {
+        caption = captionInput.val()
+        let csr = $("input[name='csrfmiddlewaretoken']").val()
+        data = {dataURIID: {{dataURIID}}, caption: caption, csrfmiddlewaretoken: csr}
+        $.ajax({
+        url: '/postManagement/addPost/' + {{dataURIID}},
+        type: "POST",
+        data: data,
+        success: function(response){
+            console.log(response.status);
+            window.location.href = '/'
+        }
+        })
+}
+postSubmitBtn.click(submitPost)
+</script>

@@ -6,5 +6,4 @@ app_name = 'userProfile'
 
 urlpatterns = [
     path('',  views.userProfileView, name="userProfileUrl"),
-    path('addPost/', views.addPostView, name = "addPostUrl")
 ]

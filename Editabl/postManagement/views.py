@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
-import cv2
-import numpy as np
+
 import base64
 from PIL import Image
 from io import BytesIO

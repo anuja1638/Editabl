@@ -46,7 +46,7 @@ def loginPageView(request):
         if user:
             login(request, user)
             print('logged in')
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/feed/feed')
     return render(request, 'authentication/loginPage.html', context={})
 
 

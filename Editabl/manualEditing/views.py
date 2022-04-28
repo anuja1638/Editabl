@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-import cv2
 
 # Create your views here.
 

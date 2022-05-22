@@ -1,12 +1,21 @@
 <script>
     let saveBtn = $("#saveBtn")
     let canvasPreview = document.getElementById('canvasPreview')
-    let canvas = document.getElementById('canvas')
+    let image = document.getElementsByClassName('main-image')[0]
+    let canvasPreview2 = document.getElementById('canvasPreview2')
+    let shareBtn = $('#shareBtn')
     let onClickSaveBtn = () => {
-        let dataURIString = canvas.toDataURL()
-        canvasPreview.innerHTML = "<img src='" + dataURIString + "' width='100%' height='100%'>"
+        {#let dataURIString = canvas.toDataURL()#}
+        let imageSrc = image.src
+        canvasPreview.innerHTML = "<img src='" + imageSrc + "' width='100%' height='100%'>"
+    }
+    let onClickShareBtn = () => {
+        {#let dataURIString = canvas.toDataURL()#}
+        let imageSrc = image.src
+        canvasPreview2.innerHTML = "<img src='" + imageSrc + "' width='100%' height='100%'>"
     }
     saveBtn.click(onClickSaveBtn)
+    shareBtn.click(onClickShareBtn)
 
     let feedPostButton = $('#feedPostButton')
     let submitPost = () => {

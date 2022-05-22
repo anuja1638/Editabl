@@ -1,0 +1,7 @@
+Host colab
+	HostName oecd-tuner-rpg-snapshot.trycloudflare.com
+	User root
+	UserKnownHostsFile /dev/null
+	VisualHostKey yes
+	StrictHostKeyChecking no
+	ProxyCommand cloudflared access ssh --hostname %h

@@ -1,0 +1,24 @@
+<script>
+var imageUrl = new Array();
+
+                imageUrl[0] = '/images/img_0.jpg';
+
+                imageUrl[1] = './images/img_1.jpg';
+
+                imageUrl[2] = './images/img_2.jpg';
+
+                imageUrl[3] = './images/img_3.jpg';
+
+                imageUrl[4] = './images/img_4.jpg';
+
+                const changeImage = function (selfId, imgArray) {
+                    var v = $(document.getElementById(selfId))[0].value//getting slider val
+                    $('.main-image')[0].src = imgArray[v];
+                    console.log();
+                }
+
+                const initializeImage = function () {
+                    $('.main-image')[0].src = imageUrl[0];
+                }
+                initializeImage()
+</script>

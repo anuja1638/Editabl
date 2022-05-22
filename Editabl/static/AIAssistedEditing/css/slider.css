@@ -1,0 +1,158 @@
+/* Base Colors */
+.range-slider {
+  margin: 0px 0 0 0%;
+}
+
+/*/ Range Slider */
+.range-slider {
+  width: 100%;
+}
+
+.range-slider__range {
+  -webkit-appearance: none;
+  width: calc(100% - 16px);
+  height: 3px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  background: -webkit-gradient(linear, left top, right top, from(green), color-stop(50%, yellow), to(red));
+  background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.range-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range-slider__range::-webkit-slider-thumb:hover {
+  background: #919191;
+}
+
+.range-slider__range:active::-webkit-slider-thumb {
+  background: #919191;
+}
+
+.range-slider__range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range-slider__range::-moz-range-thumb:hover {
+  background: #919191;
+}
+
+.range-slider__range:active::-moz-range-thumb {
+  background: #919191;
+}
+
+.range-slider__value {
+  display: block;
+  position: relative;
+  width: 80px;
+  color: #212529;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: transparent;
+  padding: 0px 0px 3px 0px;
+  margin-bottom: 8px;
+}
+
+.range-slider__value:after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #2c3e50;
+  border-bottom: 7px solid transparent;
+  content: '';
+}
+
+::-moz-range-track {
+  background: #d7dcdf;
+  background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
+  border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}
+
+#brightness-slider {
+  background: -webkit-gradient(linear, left top, right top, from(black), to(#f3f3f3));
+  background: linear-gradient(to right, black 0%, #f3f3f3 100%);
+}
+
+#contrast-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#f3f3f3), to(red));
+  background: linear-gradient(to right, #f3f3f3 0%, red 100%);
+}
+
+#saturation-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#f3f3f3), to(blue));
+  background: linear-gradient(to right, #f3f3f3 0%, blue 100%);
+}
+
+#noise-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#f3f3f3), to(#050505));
+  background: linear-gradient(to right, #f3f3f3 0%, #050505 100%);
+}
+
+#hue-slider {
+  background: -webkit-gradient(linear, left top, right top, from(lime), color-stop(33%, blue), color-stop(67%, red), to(lime));
+  background: linear-gradient(to right, lime 0%, blue 33%, red 67%, lime 100%);
+}
+
+#vibrance-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#b6b6b6), to(#10ff1c));
+  background: linear-gradient(to right, #b6b6b6 0%, #10ff1c 100%);
+}
+
+#exposure-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#050505), to(#f0f0f0));
+  background: linear-gradient(to right, #050505 0%, #f0f0f0 100%);
+}
+
+#sharpen-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#f3f3f3), to(#050505));
+  background: linear-gradient(to right, #f3f3f3 0%, #050505 100%);
+}
+
+#sepia-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#f3f3f3), to(#dad600));
+  background: linear-gradient(to right, #f3f3f3 0%, #dad600 100%);
+}
+
+#clip-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#050505), to(#f0f0f0));
+  background: linear-gradient(to right, #050505 0%, #f0f0f0 100%);
+}
+
+#stackBlur-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#e4e4e4), to(#797979));
+  background: linear-gradient(to right, #e4e4e4 0%, #797979 100%);
+}
+
+#gamma-slider {
+  background: -webkit-gradient(linear, left top, right top, from(#f3f3f3), to(#050505));
+  background: linear-gradient(to right, #f3f3f3 0%, #050505 100%);
+}
+/*# sourceMappingURL=slider.css.map */

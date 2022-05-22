@@ -25,7 +25,8 @@ urlpatterns = [
     path('records/', include('records.urls')),
     path('feed/', include('feed.urls')),
     path('editing/', include('manualEditing.urls')),
-    path('postManagement/', include('postManagement.urls'))
+    path('postManagement/', include('postManagement.urls')),
+    path('AIEditing/', include('AIAssistedEditing.urls')),
 ]
 
 if settings.DEBUG:

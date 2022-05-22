@@ -19,7 +19,8 @@
 
 hr {
     width: 70%;
-    margin: auto!important;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 /* Medium and up */

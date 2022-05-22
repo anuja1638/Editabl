@@ -1,0 +1,196 @@
+#nav-center-buttons button:focus:not(:focus-visible){
+    color:#074EE8;
+    outline-width: 0px;
+    box-shadow: none;
+}
+
+.navbar-brand img {
+    width: 68px;
+    height: 21px;
+}
+
+.image-canvas {
+    background: lightgray;
+    /* position: relative; */
+}
+
+.main-image {
+    width: 500px;
+    max-width: 700px;
+
+}
+
+.icon-size {
+    font-size: x-large;
+}
+
+#resetbtn {
+    background-color: #fdba3b;
+}
+
+/* Buttonbar */
+#button-bar{
+    background-color: #212529;
+}
+
+#button-bar button, #button-bar .inactive {
+    color: #6d6d6d;
+}
+
+#button-bar button:focus {
+    color:#fff;
+    outline: none;
+    box-shadow: none;
+}
+
+#button-bar button:hover{
+    color: #6591f0;
+}
+
+#button-bar .active {
+    color:#fff;
+}
+
+
+#effects button {
+    width: 123px;
+    margin: 7px 3px ;
+}
+
+/* Modals */
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0px;
+}
+
+.image-preview {
+    min-width: 200px;
+    min-height: 50vh;
+}
+
+
+
+/* Medium and up */
+@media (min-width: 768px) {
+    body {
+        overflow:hidden;
+    }
+    
+    .panel-content {
+        overflow-y: scroll;
+        max-height: 78vh;
+    }
+
+    .fill-space {
+        height: 90vh;
+    }
+    
+    .main-image {
+        display: inline-block;
+        width: 500px;
+    }
+
+    .divider {
+        position: relative;
+        /* padding-bottom: 1rem; */
+    }
+    .divider::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        bottom: 0px;
+        height: 1px;
+        background-color: #212529;
+        opacity: .25;
+      }
+
+      #image-container {
+          position: relative;
+      }
+
+      .modal-buttons {
+        padding: 1.25rem 0px!important;
+    }
+    
+    
+    
+}
+
+
+/* Below Medium */
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #navbar {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 3;
+        height: 56px;
+    }
+    
+    #image-container {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 56px;
+        z-index: 2;
+    }
+
+    #button-bar {
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 483px;
+        z-index: 1;
+    }
+    
+    .panel-header {
+        background-color: white;
+        position: sticky;
+        left: 0;
+        right: 0;
+        top: 549px;
+        z-index: 5;
+    }
+
+    .main-image {
+        width: 300px;
+    }
+
+    .divider {
+        position: relative;
+    }
+
+    .vr {
+        height: 3em;
+    }
+
+    #effects button {
+        width: 123px;
+        margin: 7px 30px ;
+    }
+
+    .row-scroll {
+        overflow-x: scroll;
+        border-top: 1px solid darkgray;
+        padding-bottom: 0%;
+    }
+
+    
+}
+
+/* Between Medium and Large */
+@media screen and (min-width: 768px) and (max-width: 992px) { 
+    .modal-content {
+        min-width: 80vw!important;
+        left: -14vw;
+    }
+  }

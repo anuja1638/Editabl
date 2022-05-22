@@ -1,0 +1,264 @@
+{% load static %}
+<html>
+
+<head>
+    <title>
+        AI Editing | Editabl
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'AIAssistedEditing/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'AIAssistedEditing/css/slider.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+<!-- Navbar -->
+<nav id="navbar" class="navbar navbar-light bg-light align-items-center">
+    <div class="container-fluid justify-content-between">
+        <a class="navbar-brand" href="{% url 'feed:feedPageUrl'%}"><img src="{% static 'base/images/Editabl-Logo.png' %}" alt="Logo" width="80px"></a>
+        <div style= "margin-left: 60rem;">
+            <div class="container-fluid justify-content-start m-0 p-0">
+                <button id="saveBtn" class="btn btn-sm btn-outline-success me-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#saveModal">Save<i class="bi bi-download p-2 pt-0"></i></button>
+                <button id='shareBtn' class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="modal"
+                        data-bs-target="#shareModal">Share<i class="bi bi-share  p-2 pt-0"></i></button>
+                <form method="POST" style="display: none">{% csrf_token %}
+                </form>
+                <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name='uploadedImage' style="display: none">
+                <input type="button" class="btn btn-sm btn-outline-warning ms-2" value="Upload Image" onclick="document.getElementById('image-input').click();" />
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+</nav>
+
+<!-- Body -->
+
+<div class="row">
+
+    <!-- Image Container -->
+    <div id="image-container" class="col fill-space">
+        <div class="row fill-space">
+            <div class="col d-none d-md-block"></div>
+            <div id="canvas-container"
+                 class="col-12 col-md-11 py-4 py-md-2 image-canvas d-flex flex-column justify-content-center align-items-center">
+                <img class="main-image" src="/" alt="img">
+            </div>
+        </div>
+    </div>
+    <!-- Button Bar -->
+    <div id="button-bar" class="col-12 col-md-1 px-0 p-0 order-md-first">
+        <div class="fill-space ">
+            <div
+                    class="d-flex flex-md-column align-items-md-stretch flex-grow-1 align-items-center justify-content-evenly pb-0">
+
+
+                <button id="crop" type="button" class="btn py-3 px-md-0 button-bar-btn" title="Switch to Manual Editing">
+                    <a href="{% url 'manualEditing:manualEditingPageUrl' %}" >
+                        <i class="bi bi-crop icon-size"></i>
+                    </a>
+                </button>
+
+                <!-- divider icon  -->
+                <div class="vr mt-auto mb-auto"></div>
+                <!-- AI Editing Buttons -->
+                <button id="ai-1" type="button" class="btn py-3 px-md-0 button-bar-btn" title="AI Feature 1"><i
+                        class="bi bi-emoji-smile icon-size"></i></button>
+                <button id="ai-2" type="button" class="btn divider py-3 px-md-0 button-bar-btn"
+                        title="AI Feature 2"><i class="bi bi-hourglass-split icon-size"></i></button>
+                <button id="ai-3" type="button" class="btn divider py-3 px-md-0 button-bar-btn"
+                        title="AI Feature 2"><i class="bi bi-arrow-left-right icon-size"></i></button>
+                <button id="ai-4" type="button" class="btn divider py-3 px-md-0 button-bar-btn"
+                        title="AI Feature 2"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                  fill="currentColor" class="bi bi-gender-ambiguous" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M11.5 1a.5.5 0 0 1 0-1h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-3.45 3.45A4 4 0 0 1 8.5 10.97V13H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V14H6a.5.5 0 0 1 0-1h1.5v-2.03a4 4 0 1 1 3.471-6.648L14.293 1H11.5zm-.997 4.346a3 3 0 1 0-5.006 3.309 3 3 0 0 0 5.006-3.31z" />
+                </svg></button>
+
+                <script>
+                    $('.button-bar-btn').on('click', function () {
+                        $('.button-bar-btn').removeClass('active');
+                        $(this).addClass('active');
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="col-12 col-md-3 px-4 ps-md-3 pe-md-4 fill-space ">
+        <div id="default">
+            <div id="name" class="panel-header">
+                <h3 class="py-3 ps-1 border-bottom border-2 mb-4 h4">Select a Tool</h3>
+            </div>
+        </div>
+
+        <!-- AI-1 Panel -->
+        <div id="ai-1_panel">
+            <div id="name" class="panel-header">
+                <h3 class="py-3 ps-1 border-bottom border-2 mb-4">Smile </h3>
+            </div>
+            <div class="panel-content">
+                <div class="mb-3">
+                    <label for="image-swapper-slider" class="small mb-2">Adjust your Smile</label>
+                    <div class="range-slider">
+                        <input id="ai-1_slider" name="image-swapper-slider"
+                               class="range-slider__range image-swapper-slider" type="range" value="0" min="0" max="9">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AI-2 Panel -->
+        <div id="ai-2_panel">
+            <div id="name" class="panel-header">
+                <h3 class="py-3 ps-1 border-bottom border-2 mb-4">Age</h3>
+            </div>
+            <div class="panel-content">
+                <div class="mb-3">
+                    <label for="image-swapper-slider" class="small mb-2">Adjust your age</label>
+                    <div class="range-slider">
+                        <input id="ai-2_slider" name="image-swapper-slider"
+                               class="range-slider__range image-swapper-slider" type="range" value="0" min="0" max="9">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AI-3 Panel -->
+        <div id="ai-3_panel">
+            <div id="name" class="panel-header">
+                <h3 class="py-3 ps-1 border-bottom border-2 mb-4">Pose</h3>
+            </div>
+            <div class="panel-content">
+                <div class="mb-3">
+                    <label for="image-swapper-slider" class="small mb-2">Adjust your pose</label>
+                    <div class="range-slider">
+                        <input id="ai-3_slider" name="image-swapper-slider"
+                               class="range-slider__range image-swapper-slider" type="range" value="0" min="0" max="9">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AI-4 Panel -->
+        <div id="ai-4_panel">
+            <div id="name" class="panel-header">
+                <h3 class="py-3 ps-1 border-bottom border-2 mb-4">Gender</h3>
+            </div>
+            <div class="panel-content">
+                <div class="mb-3">
+                    <label for="image-swapper-slider" class="small mb-2">Adjust your gender</label>
+                    <div class="range-slider">
+                        <input id="ai-4_slider" name="image-swapper-slider"
+                               class="range-slider__range image-swapper-slider" type="range" value="0" min="0" max="9">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    {#        <script src="rightpanel.js"></script>#}
+    {#        <script src="imageChanger.js"></script>#}
+
+
+
+    <!-- Modals -->
+
+    <!-- Save Modal -->
+    <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-md-down">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="saveModalLabel">Save</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 ps-md-0 m-md-2">
+                    <div class="row">
+                        <div
+                                class="col-12 col-md bg-secondary ps-md-0 ms-md-4 me-md-2 align-items-center justify-content-center d-flex image-preview" id='canvasPreview'>
+
+                        </div>
+                        <div class="col align-items-center justify-content-center d-grid ">
+                            <button class="btn btn-lg btn-primary px-4">Download</button>
+                            <!-- <p class="fs-5 my-5">-- OR --</p> -->
+                            <button class="btn btn-lg btn-primary" id='feedPostButton'>Save to Feed</button>
+                            <button class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#shareModal">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shareModalLabel">Share</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 ps-md-0 m-md-2">
+                    <div class="row">
+                        <div
+                                class="col-12 col-md bg-secondary ps-md-0 ms-md-4 me-md-2 align-items-center justify-content-center d-flex image-preview" id="canvasPreview2">
+                        </div>
+                        <div
+                                class="col-12 col-md justify-content-between justify-content-md-around d-flex mt-5 mt-md-2 px-4 px-md-2 modal-buttons">
+                            <div class="d-flex flex-column align-items-center">
+                                <button class="btn btn-circle btn-primary btn-lg"><i
+                                        class="bi bi-instagram icon-size"></i></button>
+                                <label>Instagram</label>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <button class="btn btn-circle btn-primary btn-lg"><i
+                                        class="bi bi-linkedin icon-size"></i></button>
+                                <label>LinkedIn</label>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <button class="btn btn-circle btn-primary btn-lg"><i
+                                        class="bi bi-facebook icon-size"></i></button>
+                                <label>Facebook</label>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <button class="btn btn-circle btn-primary btn-lg"><i
+                                        class="bi bi-twitter icon-size"></i></button>
+                                <label>Twitter</label>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <button class="btn btn-circle btn-primary btn-lg" data-bs-toggle="modal"
+                                        data-bs-target="#saveModal"><i class="bi bi-download icon-size"></i></button>
+                                <label>Download</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% include 'AIAssistedEditing/rightPanel.html'%}
+{% include 'AIAssistedEditing/imageChanger.html'%}
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+{% include 'manualEditing/loadPreviewAndSaveToFeedJS.html'%}
+{% include 'AIAssistedEditing/assistedJS.html' %}
+</html>

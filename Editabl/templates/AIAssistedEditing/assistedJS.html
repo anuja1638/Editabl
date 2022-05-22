@@ -1,0 +1,64 @@
+<script>
+    let uploaded_image;
+    let mainImage = document.getElementsByClassName('main-image')[0]
+    const image_input = document.querySelector("#image-input");
+    image_input.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            uploaded_image = reader.result;
+            mainImage.src = uploaded_image;
+            processImage()
+        });
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    let smileArray, poseArray, genderArray, ageArray;
+    let processImage = () => {
+        let csr = $("input[name='csrfmiddlewaretoken']").val()
+        let data = {dataURIString: uploaded_image, csrfmiddlewaretoken: csr}
+        console.log(uploaded_image.length)
+        $.ajax({
+            url: "{% url 'AIAssistedEditing:processImage' %}",
+            type: "POST",
+            data: data,
+            success: function(response){
+                if(response.status === 1){
+                    console.log("Great");
+                    smileArray = response.uriDict['smile']
+                    poseArray = response.uriDict['pose']
+                    genderArray = response.uriDict['gender']
+                    ageArray = response.uriDict['age']
+                }}
+        })
+
+        let getImageSrc = (bytesBase64) => {
+            return "data:image/png;base64," + bytesBase64.slice(2, -1)
+        }
+
+
+        let changeImage1 =  () => {
+            let v = $(document.getElementById("ai-1_slider"))[0].value//getting slider val
+            mainImage.src = getImageSrc(smileArray[v]);
+        }
+        let changeImage2 =  () => {
+            let v = $(document.getElementById("ai-2_slider"))[0].value//getting slider val
+            mainImage.src = getImageSrc(ageArray[v]);
+        }
+        let changeImage3 =  () => {
+            let v = $(document.getElementById("ai-3_slider"))[0].value//getting slider val
+            mainImage.src = getImageSrc(poseArray[v]);
+        }
+        let changeImage4 =  () => {
+            let v = $(document.getElementById("ai-4_slider"))[0].value//getting slider val
+            mainImage.src = getImageSrc(genderArray[v]);
+        }
+        let smileSlider = document.getElementById("ai-1_slider")
+        smileSlider.addEventListener('input', changeImage1)
+        let ageSlider = document.getElementById("ai-2_slider")
+        ageSlider.addEventListener('input', changeImage2)
+        let poseSlider = document.getElementById("ai-3_slider")
+        poseSlider.addEventListener('input', changeImage3)
+        let genderSlider = document.getElementById("ai-4_slider")
+        genderSlider.addEventListener('input', changeImage4)
+    }
+</script>

@@ -1,0 +1,46 @@
+<script>
+// Functions adjusting visibility of <div> on right panel
+    $(document).ready(() => {
+    
+        document.getElementById('ai-1_panel').style.display = "none";
+        document.getElementById('ai-2_panel').style.display = "none";
+        document.getElementById('ai-3_panel').style.display = "none";
+        document.getElementById('ai-4_panel').style.display = "none";
+    
+        $('#ai-1').click(() => {
+            console.log('Clicked AI-1');
+            document.getElementById('default').style.display = "none";
+            document.getElementById('ai-1_panel').style.display = "block";
+            document.getElementById('ai-2_panel').style.display = "none";
+            document.getElementById('ai-3_panel').style.display = "none";
+            document.getElementById('ai-4_panel').style.display = "none";
+    
+        });
+        $('#ai-2').click(() => {
+            console.log('Clicked AI-2');
+            document.getElementById('default').style.display = "none";
+            document.getElementById('ai-1_panel').style.display = "none";
+            document.getElementById('ai-2_panel').style.display = "block";
+            document.getElementById('ai-3_panel').style.display = "none";
+            document.getElementById('ai-4_panel').style.display = "none";
+        });
+        $('#ai-3').click(() => {
+            console.log('Clicked AI-3');
+            document.getElementById('default').style.display = "none";
+            document.getElementById('ai-1_panel').style.display = "none";
+            document.getElementById('ai-2_panel').style.display = "none";
+            document.getElementById('ai-3_panel').style.display = "block";
+            document.getElementById('ai-4_panel').style.display = "none";
+        });
+        $('#ai-4').click(() => {
+            console.log('Clicked AI-4');
+            document.getElementById('default').style.display = "none";
+            document.getElementById('ai-1_panel').style.display = "none";
+            document.getElementById('ai-2_panel').style.display = "none";
+            document.getElementById('ai-3_panel').style.display = "none";
+            document.getElementById('ai-4_panel').style.display = "block";
+        });
+    
+        
+    });
+</script>

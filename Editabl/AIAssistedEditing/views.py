@@ -55,7 +55,7 @@ def alignImage():
 def encodeImage():
     print("Starting Encoding")
     encodeCmd = "python encode_images.py --optimizer=lbfgs " \
-                "--face_mask=True --iterations=6 --use_lpips_loss=0 " \
+                "--face_mask=True --iterations=10 --use_lpips_loss=0 " \
                 "--use_discriminator_loss=0 --output_video=False " \
                 "aligned_images/ generated_images/ " \
                 "latent_representations/"
@@ -158,18 +158,18 @@ def getImageResponse():
 def processImageAsync(request):
     if request.method == "POST":
         timeStart = time.time()
-        image = dataURIToImg(request.POST['dataURIString'])
-        image = image.convert('RGBA')
-        image.save('testImage/image.png')
-        enableEncodingMode('testImage/image.png')
-        alignImage()
-        encodeImage()
-        saveOutputVector()
-        latentWalk([['smile', '0.5', '0.5', '10'],
-                    ['age', '1.7', '1.7', '10'],
-                    ['pose', '0.4', '0.4', '10'],
-                    ['gender', '1.5', '1.5', '10']])
-        disableEncodingMode()
+        # image = dataURIToImg(request.POST['dataURIString'])
+        # image = image.convert('RGBA')
+        # image.save('testImage/image.png')
+        # enableEncodingMode('testImage/image.png')
+        # alignImage()
+        # encodeImage()
+        # saveOutputVector()
+        # latentWalk([['smile', '0.5', '0.5', '10'],
+        #             ['age', '1.7', '1.7', '10'],
+        #             ['pose', '0.4', '0.4', '10'],
+        #             ['gender', '1.5', '1.5', '10']])
+        # disableEncodingMode()
         timeEnd = time.time()
         print("Execution Time - '%s' mins!" % str((timeEnd-timeStart)//60))
         response = getImageResponse()

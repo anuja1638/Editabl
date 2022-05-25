@@ -20,7 +20,7 @@
     let feedPostButton = $('#feedPostButton')
     let submitPost = () => {
         let csr = $("input[name='csrfmiddlewaretoken']").val()
-        let dataURIString = canvas.toDataURL()
+        let dataURIString = image.src
         data = {dataURIString: dataURIString, csrfmiddlewaretoken: csr}
             $.ajax({
             url: "{% url 'postManagement:uploadPostUrl' %}",
